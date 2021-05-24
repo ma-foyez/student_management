@@ -41,7 +41,7 @@ class StudentController extends Controller
         $student->info = $request->info;
         $student->save(); //this save method is used for save data into database
 
-        return redirect()->route('index');
+        return redirect()->route('home');
     }
 
     public function edit($id)
@@ -60,13 +60,13 @@ class StudentController extends Controller
         $student->department_name = $request->department_name;
         $student->info = $request->info;
         $student->save();
-        return redirect()->route('index');
+        return redirect()->route('home');
     }
     public function delete($id)
     {
         // at first get single student data & update it
         $student = Student::find($id);
         $student->delete();
-        return redirect()->route('index');
+        return redirect()->route('home');
     }
 }

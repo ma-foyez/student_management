@@ -34,13 +34,16 @@
                                             <td> {{ $student->department_name }} </td>
                                             <td> {{ $student->info }} </td>
                                             <td class="d-flex">
-                                                <a href="{{ route('edit', $student->id) }}"
-                                                    class="btn btn-success">Edit</a>
+                                                <a href="{{ route('edit', $student->id) }}" class="btn btn-success">
+                                                    <i class="far fa-edit"></i>
+                                                </a>
                                                 {{-- <a href="/" class="btn btn-danger">Delete</a> --}}
                                                 <form class="form-inline" action=" {{ route('delete', $student->id) }} "
                                                     method="POST">
                                                     {{ csrf_field() }}
-                                                    <input type="submit" value="Delete" class="btn btn-danger">
+                                                    <button type="submit" value="" class="btn btn-danger ms-2">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
                                                 </form>
                                             </td>
                                         </tr>
