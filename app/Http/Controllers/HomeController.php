@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Student;
 
 class HomeController extends Controller
 {
@@ -11,6 +12,7 @@ class HomeController extends Controller
      *
      * @return void
      */
+    //this middleware is used for private route
     public function __construct()
     {
         $this->middleware('auth');
@@ -23,6 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $students = Student::all();
+        return view('home')->with('students', $students);
     }
 }

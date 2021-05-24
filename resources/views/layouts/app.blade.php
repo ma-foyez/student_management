@@ -67,16 +67,18 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
-                                                                                                                                                                                     document.getElementById('logout-form').submit();">
+                                                                                                                                                                                                                         document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-block">
                                         @csrf
                                     </form>
                                 </div>
                             </li>
                         @endguest
+
+
                     </ul>
                 </div>
             </div>

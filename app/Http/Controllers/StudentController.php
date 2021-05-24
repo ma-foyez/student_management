@@ -7,10 +7,13 @@ use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
-        $students = Student::all();
-        return view('index')->with('students', $students);
+        return view('auth.login');
     }
     public function create()
     {
